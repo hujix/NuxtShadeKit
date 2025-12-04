@@ -1,0 +1,33 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "prettier.enable": true,
+  "editor.formatOnSaveMode": "file",
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "tailwindCSS.experimental.configFile": "app/assets/css/tailwind.css",
+  "nuxtr.vueFiles.firstTag": "script",
+  "nuxtr.vueFiles.script.type": "setup",
+  "nuxtr.vueFiles.style.addStyleTag": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "i18n-ally.localesPaths": ["locales"],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sourceLanguage": "zh-CN"
+}

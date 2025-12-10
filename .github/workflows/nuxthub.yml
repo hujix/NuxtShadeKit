@@ -31,3 +31,5 @@ jobs:
         uses: nuxt-hub/action@v2
         with:
           project-key: nuxt-shade-kit-6zts
+        env:
+          NITRO_PRESET: cloudflare-pages

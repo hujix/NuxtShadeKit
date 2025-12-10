@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/tailwind.css"],
   modules: ["@nuxt/eslint", "shadcn-nuxt", "nuxt-auth-utils", "nuxt-security"],
+  nitro: {
+    preset: "cloudflare_module",
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true,
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

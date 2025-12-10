@@ -21,10 +21,10 @@ const router = useRouter();
         </div>
         <div class="flex items-center gap-4">
           <ColorModeButton />
-          <div v-if="loggedIn">
+          <template v-if="loggedIn">
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <Avatar>
+                <Avatar class="h-full">
                   <AvatarImage :src="user?.avatar || ''" :alt="user?.name" />
                   <AvatarFallback>{{ user?.name.charAt(0) }}</AvatarFallback>
                 </Avatar>
@@ -36,7 +36,7 @@ const router = useRouter();
                 <DropdownMenuItem class="cursor-pointer" @click="clear">登出</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-          </div>
+          </template>
           <Button v-else variant="default" @click="router.push('/login')">
             <LogIn class="mr-2 size-4" />
             登录

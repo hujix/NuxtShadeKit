@@ -37,15 +37,15 @@ const getSentence = async () => {
         <Rocket class="mr-2 size-3" />
         Nuxt 4 + Tailwind CSS v4 + shadcn-vue
       </Badge>
-      <h1 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+      <h1 class="mb-6 px-6 text-4xl font-bold tracking-tight sm:text-5xl md:px-0 md:text-6xl lg:text-7xl">
         构建现代 Web 应用
         <span class="from-primary to-primary/60 bg-linear-to-r bg-clip-text text-transparent">的新起点</span>
       </h1>
-      <p class="text-muted-foreground mb-8 text-lg sm:text-xl">
+      <p class="text-muted-foreground mb-8 px-4 text-lg sm:text-xl md:px-0">
         基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代前端模板项目， 内置基础登录功能、统一 UI
         体系、完善的工程化配置， 可作为企业级项目的起点或个人快速开发的脚手架。
       </p>
-      <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+      <div class="flex flex-col gap-4 px-6 sm:flex-row sm:justify-center sm:px-0">
         <NuxtLink
           to="https://github.com/hujix/NuxtShadeKit?tab=readme-ov-file#nuxtshadekit"
           target="_blank"

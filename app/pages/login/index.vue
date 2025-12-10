@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Sparkles } from "lucide-vue-next";
 
-const { loggedIn } = useUserSession();
-const router = useRouter();
+const { loggedIn, openInPopup } = useUserSession();
+
 definePageMeta({
   layout: false,
 });
@@ -22,14 +22,21 @@ onMounted(() => {
     navigateTo("/");
   }
 });
+
+watch(loggedIn, (newVal) => {
+  if (newVal) {
+    navigateTo("/");
+  }
+});
+
 const loginWithGithub = () => {
-  router.push("/auth/github");
+  openInPopup("/auth/github");
 };
 </script>
 
 <template>
   <div class="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-    <div class="flex w-full max-w-sm flex-col gap-6">
+    <div class="border-border flex w-full max-w-sm flex-col gap-6 rounded-md border p-6">
       <a href="#" class="flex items-center gap-2 self-center font-medium">
         <div class="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
           <Sparkles class="size-4" />

@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "Nuxt Shade Kit",
+    "description": "더 많이 알고, 더 많이 성취하세요.",
+    "appTitle": "NuxtShadeKit - 현대적인 풀스택 템플릿",
+    "appDescription": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue를 기반으로 한 현대적인 풀스택 템플릿 프로젝트. OAuth 인증, API 보안 보호, 통합 UI 시스템 통합",
+    "appKeywords": "Nuxt 4, Vue 3, Tailwind CSS, shadcn-vue, TypeScript, OAuth, nuxt-auth-utils, nuxt-security, 풀스택 템플릿, 프로젝트 스캐폴드",
+    "ogTitle": "NuxtShadeKit - 현대적인 풀스택 템플릿",
+    "ogDescription": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue를 기반으로 한 현대적인 풀스택 템플릿 프로젝트. OAuth 인증 및 API 보안 보호 통합",
+    "twitterTitle": "NuxtShadeKit - 현대적인 풀스택 템플릿",
+    "twitterDescription": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue를 기반으로 한 현대적인 풀스택 템플릿 프로젝트",
+    "loginTitle": "로그인 - Nuxt Shade Kit",
+    "loginDescription": "계정에 로그인"
+  },
+  "pages": {
+    "index": {
+      "badge": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue",
+      "title": "현대적인 웹 애플리케이션 구축",
+      "titleHighlight": "새로운 시작점",
+      "description": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue를 기반으로 한 현대적인 프론트엔드 템플릿 프로젝트. 기본 로그인 기능, 통합 UI 시스템, 포괄적인 엔지니어링 구성이 내장되어 있으며, 엔터프라이즈 수준 프로젝트의 시작점 또는 빠른 개인 개발을 위한 스캐폴드로 사용할 수 있습니다.",
+      "getStarted": "시작하기",
+      "hitokoto": "일언"
+    },
+    "login": {
+      "title": "Github로 로그인",
+      "terms": "계속하면 {0} 및 {1}에 동의하는 것입니다.",
+      "termsOfService": "서비스 약관",
+      "privacyPolicy": "개인정보 보호정책"
+    }
+  },
+  "layout": {
+    "name": "이름:",
+    "email": "이메일:",
+    "logout": "로그아웃",
+    "login": "로그인"
+  }
+}

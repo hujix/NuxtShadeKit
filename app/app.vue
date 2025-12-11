@@ -2,37 +2,37 @@
 import { Toaster } from "vue-sonner";
 import "vue-sonner/style.css";
 
-useHead({
-  title: "NuxtShadeKit - 现代全栈模板",
+const { t } = useI18n();
+
+useHead(() => ({
+  title: t("meta.appTitle"),
   meta: [
     {
       name: "description",
-      content:
-        "基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代全栈模板项目，集成 OAuth 认证、接口安全防护、统一 UI 体系",
+      content: t("meta.appDescription"),
     },
     {
       name: "keywords",
-      content:
-        "Nuxt 4, Vue 3, Tailwind CSS, shadcn-vue, TypeScript, OAuth, nuxt-auth-utils, nuxt-security, 全栈模板, 项目脚手架",
+      content: t("meta.appKeywords"),
     },
     { name: "author", content: "Hu.Sir" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { charset: "utf-8" },
     // Open Graph
-    { property: "og:title", content: "NuxtShadeKit - 现代全栈模板" },
+    { property: "og:title", content: t("meta.ogTitle") },
     {
       property: "og:description",
-      content: "基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代全栈模板项目，集成 OAuth 认证、接口安全防护",
+      content: t("meta.ogDescription"),
     },
     { property: "og:type", content: "website" },
     // Twitter Card
-    { name: "twitter:title", content: "NuxtShadeKit - 现代全栈模板" },
+    { name: "twitter:title", content: t("meta.twitterTitle") },
     {
       name: "twitter:description",
-      content: "基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代全栈模板项目",
+      content: t("meta.twitterDescription"),
     },
   ],
-});
+}));
 </script>
 
 <template>

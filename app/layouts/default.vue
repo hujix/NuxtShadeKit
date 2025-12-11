@@ -17,9 +17,10 @@ const router = useRouter();
           <div class="bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-md">
             <Sparkles class="size-4" />
           </div>
-          <span class="font-semibold">Nuxt Shade Kit</span>
+          <span class="font-semibold">{{ $t("meta.title") }}</span>
         </div>
         <div class="flex items-center gap-4">
+          <I18nSwitch />
           <ColorModeButton />
           <template v-if="loggedIn">
             <DropdownMenu>
@@ -30,16 +31,16 @@ const router = useRouter();
                 </Avatar>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuLabel>Name: {{ user!.name }}</DropdownMenuLabel>
-                <DropdownMenuLabel>Email: {{ user!.email }}</DropdownMenuLabel>
+                <DropdownMenuLabel>{{ $t("layout.name") }} {{ user!.name }}</DropdownMenuLabel>
+                <DropdownMenuLabel>{{ $t("layout.email") }} {{ user!.email }}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem class="cursor-pointer" @click="clear">登出</DropdownMenuItem>
+                <DropdownMenuItem class="cursor-pointer" @click="clear">{{ $t("layout.logout") }}</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </template>
-          <Button v-else variant="default" @click="router.push('/login')">
+          <Button v-else variant="default" @click="router.push($localePath('/login'))">
             <LogIn class="mr-2 size-4" />
-            登录
+            {{ $t("layout.login") }}
           </Button>
         </div>
       </div>

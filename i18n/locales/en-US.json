@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "Nuxt Shade Kit",
+    "description": "Know more, achieve more.",
+    "appTitle": "NuxtShadeKit - Modern Full-Stack Template",
+    "appDescription": "A modern full-stack template project based on Nuxt 4 + Tailwind CSS v4 + shadcn-vue, integrated with OAuth authentication, API security protection, and unified UI system",
+    "appKeywords": "Nuxt 4, Vue 3, Tailwind CSS, shadcn-vue, TypeScript, OAuth, nuxt-auth-utils, nuxt-security, full-stack template, project scaffold",
+    "ogTitle": "NuxtShadeKit - Modern Full-Stack Template",
+    "ogDescription": "A modern full-stack template project based on Nuxt 4 + Tailwind CSS v4 + shadcn-vue, integrated with OAuth authentication and API security protection",
+    "twitterTitle": "NuxtShadeKit - Modern Full-Stack Template",
+    "twitterDescription": "A modern full-stack template project based on Nuxt 4 + Tailwind CSS v4 + shadcn-vue",
+    "loginTitle": "Login - Nuxt Shade Kit",
+    "loginDescription": "Login to your account"
+  },
+  "pages": {
+    "index": {
+      "badge": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue",
+      "title": "Build Modern Web Applications",
+      "titleHighlight": "Starting Point",
+      "description": "A modern frontend template project based on Nuxt 4 + Tailwind CSS v4 + shadcn-vue, with built-in basic login functionality, unified UI system, and comprehensive engineering configuration. It can serve as a starting point for enterprise-level projects or a scaffold for rapid personal development.",
+      "getStarted": "Get Started",
+      "hitokoto": "Hitokoto"
+    },
+    "login": {
+      "title": "Login with Github",
+      "terms": "By continuing, you agree to our {0} and {1}.",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy"
+    }
+  },
+  "layout": {
+    "name": "Name:",
+    "email": "Email:",
+    "logout": "Logout",
+    "login": "Login"
+  }
+}

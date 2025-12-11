@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Nuxt Shade Kit",
+    "appTitle": "NuxtShadeKit - 现代全栈模板",
+    "appDescription": "基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代全栈模板项目，集成 OAuth 认证、接口安全防护、统一 UI 体系",
+    "appKeywords": "Nuxt 4, Vue 3, Tailwind CSS, shadcn-vue, TypeScript, OAuth, nuxt-auth-utils, nuxt-security, 全栈模板, 项目脚手架",
+    "ogTitle": "NuxtShadeKit - 现代全栈模板",
+    "ogDescription": "基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代全栈模板项目，集成 OAuth 认证、接口安全防护",
+    "twitterTitle": "NuxtShadeKit - 现代全栈模板",
+    "twitterDescription": "基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代全栈模板项目",
+    "loginTitle": "登录 - Nuxt Shade Kit",
+    "loginDescription": "登录您的账户"
+  },
+  "pages": {
+    "index": {
+      "badge": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue",
+      "title": "构建现代 Web 应用",
+      "titleHighlight": "的新起点",
+      "description": "基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代前端模板项目， 内置基础登录功能、统一 UI 体系、完善的工程化配置， 可作为企业级项目的起点或个人快速开发的脚手架。",
+      "getStarted": "开始使用",
+      "hitokoto": "一言"
+    },
+    "login": {
+      "title": "使用 Github 登录",
+      "terms": "点击继续即表示您同意我们的{0}和{1}。",
+      "termsOfService": "服务条款",
+      "privacyPolicy": "隐私政策"
+    }
+  },
+  "layout": {
+    "name": "姓名：",
+    "email": "邮箱：",
+    "logout": "登出",
+    "login": "登录"
+  }
+}

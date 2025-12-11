@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "Nuxt Shade Kit",
+    "description": "もっと知り、もっと達成する。",
+    "appTitle": "NuxtShadeKit - モダンなフルスタックテンプレート",
+    "appDescription": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue をベースにしたモダンなフルスタックテンプレートプロジェクト。OAuth認証、APIセキュリティ保護、統一されたUIシステムを統合",
+    "appKeywords": "Nuxt 4, Vue 3, Tailwind CSS, shadcn-vue, TypeScript, OAuth, nuxt-auth-utils, nuxt-security, フルスタックテンプレート, プロジェクトスキャフォールド",
+    "ogTitle": "NuxtShadeKit - モダンなフルスタックテンプレート",
+    "ogDescription": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue をベースにしたモダンなフルスタックテンプレートプロジェクト。OAuth認証とAPIセキュリティ保護を統合",
+    "twitterTitle": "NuxtShadeKit - モダンなフルスタックテンプレート",
+    "twitterDescription": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue をベースにしたモダンなフルスタックテンプレートプロジェクト",
+    "loginTitle": "ログイン - Nuxt Shade Kit",
+    "loginDescription": "アカウントにログイン"
+  },
+  "pages": {
+    "index": {
+      "badge": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue",
+      "title": "モダンなWebアプリケーションを構築",
+      "titleHighlight": "新しい出発点",
+      "description": "Nuxt 4 + Tailwind CSS v4 + shadcn-vue をベースにしたモダンなフロントエンドテンプレートプロジェクト。基本的なログイン機能、統一されたUIシステム、包括的なエンジニアリング設定が組み込まれており、エンタープライズレベルのプロジェクトの出発点または迅速な個人開発のスキャフォールドとして機能できます。",
+      "getStarted": "始める",
+      "hitokoto": "一言"
+    },
+    "login": {
+      "title": "Githubでログイン",
+      "terms": "続行することで、{0}および{1}に同意したことになります。",
+      "termsOfService": "利用規約",
+      "privacyPolicy": "プライバシーポリシー"
+    }
+  },
+  "layout": {
+    "name": "名前:",
+    "email": "メール:",
+    "logout": "ログアウト",
+    "login": "ログイン"
+  }
+}

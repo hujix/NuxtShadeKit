@@ -4,6 +4,10 @@
 
 ⚡️ 本仓库已设置为 GitHub Template，可一键复制开始你的项目。
 
+<p align="center">
+  <a href="README.en.md">English</a> | <a href="#">中文</a>
+</p>
+
 ![NuxtShadeKit](./public/image/image.png)
 
 ## 📋 功能计划
@@ -17,7 +21,7 @@
 - [x] **TypeScript 支持** - 完整类型定义
 - [x] **开发工具** - Nuxt DevTools 集成
 - [x] **暗色模式切换** - 主题系统完善
-- [ ] **国际化支持** - i18n 多语言配置
+- [x] **国际化支持** - i18n 多语言配置
 - [ ] **数据库集成** - Prisma ORM + PostgreSQL
 - [ ] **日志系统** - 统一日志收集和分析
 - [ ] **Docker 部署** - 容器化部署方案
@@ -155,7 +159,7 @@ export default defineOAuthGitHubEventHandler({
 4. **前端触发登录**
 
 ```vue
-<button @click="navigateTo('/auth/github', { external: true })">
+<button @click="navigateTo($localePath('/auth/github'), { external: true })">
   GitHub 登录
 </button>
 ```
@@ -192,7 +196,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/api/**": { csurf: { enabled: false } }, // API 可根据需要启用
+    "/api/**": { csurf: { enabled: true } },
   },
 });
 ```

@@ -35,15 +35,16 @@ const getSentence = async () => {
     <div class="mx-auto max-w-3xl pt-24 text-center">
       <Badge variant="secondary" class="mb-4">
         <Rocket class="mr-2 size-3" />
-        Nuxt 4 + Tailwind CSS v4 + shadcn-vue
+        {{ $t("pages.index.badge") }}
       </Badge>
       <h1 class="mb-6 px-6 text-4xl font-bold tracking-tight sm:text-5xl md:px-0 md:text-6xl lg:text-7xl">
-        构建现代 Web 应用
-        <span class="from-primary to-primary/60 bg-linear-to-r bg-clip-text text-transparent">的新起点</span>
+        {{ $t("pages.index.title") }}
+        <span class="from-primary to-primary/60 bg-linear-to-r bg-clip-text text-transparent">{{
+          $t("pages.index.titleHighlight")
+        }}</span>
       </h1>
       <p class="text-muted-foreground mb-8 px-4 text-lg sm:text-xl md:px-0">
-        基于 Nuxt 4 + Tailwind CSS v4 + shadcn-vue 的现代前端模板项目， 内置基础登录功能、统一 UI
-        体系、完善的工程化配置， 可作为企业级项目的起点或个人快速开发的脚手架。
+        {{ $t("pages.index.description") }}
       </p>
       <div class="flex flex-col gap-4 px-6 sm:flex-row sm:justify-center sm:px-0">
         <NuxtLink
@@ -51,12 +52,12 @@ const getSentence = async () => {
           target="_blank"
           :class="cn(buttonVariants({ variant: 'default', size: 'lg' }), 'group')"
         >
-          开始使用
+          {{ $t("pages.index.getStarted") }}
           <ArrowRight class="ml-2 size-4 transition-transform group-hover:translate-x-1" />
         </NuxtLink>
         <Button size="lg" variant="outline" :disabled="loading" @click="getSentence">
           <LoaderCircle v-if="loading" class="size-4 animate-spin" />
-          一言
+          {{ $t("pages.index.hitokoto") }}
         </Button>
       </div>
     </div>

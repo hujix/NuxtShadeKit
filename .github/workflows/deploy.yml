@@ -35,8 +35,8 @@ jobs:
       - name: Build project
         run: pnpm Build
 
-      - name: Deploy to Cloudflare Pages (Recommended: Wrangler)
-        uses: cloudflare/wrangler-action@v3 
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

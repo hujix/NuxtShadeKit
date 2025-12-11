@@ -230,6 +230,88 @@ pnpm preview   # 预览生产构建
 pnpm lint      # 代码格式化和检查
 ```
 
+## 🚀 部署到 Cloudflare Pages
+
+本项目已配置为部署到 **Cloudflare Pages**（相比 Workers，Pages 在国内访问更稳定）。
+
+### 方式一：使用 Wrangler CLI 部署
+
+1. **安装 Wrangler**（如果尚未安装）：
+
+```bash
+npm install -g wrangler
+# 或
+pnpm add -g wrangler
+```
+
+2. **登录 Cloudflare**：
+
+```bash
+wrangler login
+```
+
+3. **构建并部署**：
+
+```bash
+pnpm build
+pnpm deploy
+# 或直接使用
+wrangler pages deploy dist --project-name=nuxt-shade-kit
+```
+
+**预览构建结果**（本地测试）：
+
+```bash
+pnpm build
+wrangler pages dev dist
+```
+
+### 方式二：通过 Cloudflare Dashboard 部署（推荐）
+
+1. **连接 Git 仓库**：
+   - 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - 进入 **Pages** → **创建项目** → **连接到 Git**
+   - 授权并选择你的 GitHub/GitLab 仓库
+
+2. **配置构建设置**：
+   - **项目名称**：`nuxt-shade-kit`
+   - **生产分支**：`main` 或 `master`
+   - **构建命令**：`pnpm install && pnpm build`
+   - **构建输出目录**：`dist`
+   - **Node.js 版本**：`18` 或 `20`
+
+3. **配置兼容性标志**（重要）：
+   - 在项目设置中找到 **Functions** 或 **兼容性标志** 设置
+   - 启用 **Node.js 兼容性**（`nodejs_compat`）
+   - 或者在 **设置** → **Functions** → **兼容性标志** 中添加：`nodejs_compat`
+   - ⚠️ **必须配置**：否则部署会失败，提示 "No such module node:buffer"
+
+4. **配置环境变量**：在项目设置中添加以下环境变量：
+
+   ```
+   NUXT_OAUTH_GITHUB_CLIENT_ID=your-github-client-id
+   NUXT_OAUTH_GITHUB_CLIENT_SECRET=your-github-client-secret
+   NUXT_SESSION_PASSWORD=your-secret-password-min-32-chars
+   ```
+
+5. **部署**：
+   - 点击 **保存并部署**
+   - 部署完成后，你将获得一个 `*.pages.dev` 的域名
+
+### 配置自定义域名
+
+1. 在 Cloudflare Pages 项目设置中，点击 **自定义域名**
+2. 输入你的域名并按照提示配置 DNS
+3. 确保 SSL/TLS 模式设置为 **完全（Full）**
+
+### 注意事项
+
+- ⚠️ **Node.js 兼容性标志**：必须在 Cloudflare Dashboard 中启用 `nodejs_compat` 兼容性标志，否则部署会失败
+- ⚠️ **环境变量安全**：敏感信息（如 OAuth Secret、Session Password）应通过 Cloudflare Dashboard 的环境变量设置，不要提交到 Git
+- ✅ **GitHub OAuth Callback URL**：部署后需要更新为 `https://your-domain.pages.dev/auth/github`
+- 📝 **自动部署**：连接 Git 后，每次推送到主分支都会自动触发部署
+- 🔧 **CLI 部署**：使用 CLI 部署时，兼容性标志已通过 `--compatibility-flags=nodejs_compat` 参数传递
+
 ### VSCode 插件推荐
 
 项目已配置 `.vscode/extensions.json`，首次打开项目时 VSCode 会自动提示安装推荐插件：

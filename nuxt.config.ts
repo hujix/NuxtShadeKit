@@ -38,6 +38,11 @@ export default defineNuxtConfig({
         methodsToProtect: ["GET", "POST", "PUT", "PATCH", "DELETE"],
       },
     },
+    "/api/_auth/session": {
+      csurf: {
+        enabled: false,
+      },
+    },
   },
   shadcn: {
     /**

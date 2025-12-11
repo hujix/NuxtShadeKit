@@ -266,7 +266,60 @@ pnpm build
 wrangler pages dev dist
 ```
 
-### 方式二：通过 Cloudflare Dashboard 部署（推荐）
+### 方式二：GitHub Actions 自动部署（推荐）
+
+项目已配置 GitHub Actions 工作流，推送到 `master` 或 `main` 分支时会自动构建并部署到 Cloudflare Pages。
+
+#### 配置步骤：
+
+1. **获取 Cloudflare API Token**：
+   - 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - 进入 **My Profile** → **API Tokens**
+   - 点击 **Create Token** → **Create Custom Token**
+   - 配置权限：
+     - **Account** → **Cloudflare Pages** → **Edit**
+   - 复制生成的 Token
+
+2. **获取 Account ID**：
+   - 在 Cloudflare Dashboard 右侧边栏可以看到 **Account ID**
+
+3. **配置 GitHub Secrets**：
+   - 进入你的 GitHub 项目仓库 → **Settings** → **Secrets and variables** → **Actions**
+   - 添加以下 Secrets：
+     ```
+     CLOUDFLARE_API_TOKEN      # Cloudflare API Token
+     CLOUDFLARE_ACCOUNT_ID     # Cloudflare Account ID
+     NUXT_OAUTH_GITHUB_CLIENT_ID       # GitHub OAuth Client ID（可选，如果构建时需要）
+     NUXT_OAUTH_GITHUB_CLIENT_SECRET   # GitHub OAuth Client Secret（可选）
+     NUXT_SESSION_PASSWORD             # Session 密钥（可选）
+     ```
+
+4. **首次部署**：
+   - 推送到 `master` 或 `main` 分支
+   - GitHub Actions 会自动触发构建和部署
+   - 在 **Actions** 标签页查看部署状态
+
+5. **在 Cloudflare 中创建 Pages 项目**（首次需要）：
+   - 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - 进入 **Pages** → **创建项目**
+   - 项目名称：`nuxt-shade-kit`
+   - 选择 **直接上传** 或等待 GitHub Actions 首次部署
+
+6. **配置兼容性标志**（重要）：
+   - 在 Cloudflare Pages 项目设置中
+   - 找到 **Functions** → **兼容性标志**
+   - 启用 **Node.js 兼容性**（`nodejs_compat`）
+
+7. **配置环境变量**（在 Cloudflare Dashboard 中）：
+   - 进入项目设置 → **环境变量**
+   - 添加以下变量：
+     ```
+     NUXT_OAUTH_GITHUB_CLIENT_ID=your-github-client-id
+     NUXT_OAUTH_GITHUB_CLIENT_SECRET=your-github-client-secret
+     NUXT_SESSION_PASSWORD=your-secret-password-min-32-chars
+     ```
+
+### 方式三：通过 Cloudflare Dashboard 部署
 
 1. **连接 Git 仓库**：
    - 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
@@ -278,7 +331,7 @@ wrangler pages dev dist
    - **生产分支**：`main` 或 `master`
    - **构建命令**：`pnpm install && pnpm build`
    - **构建输出目录**：`dist`
-   - **Node.js 版本**：`18` 或 `20`
+   - **Node.js 版本**：`22`
 
 3. **配置兼容性标志**（重要）：
    - 在项目设置中找到 **Functions** 或 **兼容性标志** 设置

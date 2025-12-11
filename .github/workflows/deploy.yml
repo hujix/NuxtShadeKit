@@ -33,18 +33,11 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build project
-        run: pnpm build
-        # env:
-        #   NUXT_OAUTH_GITHUB_CLIENT_ID: ${{ secrets.NUXT_OAUTH_GITHUB_CLIENT_ID }}
-        #   NUXT_OAUTH_GITHUB_CLIENT_SECRET: ${{ secrets.NUXT_OAUTH_GITHUB_CLIENT_SECRET }}
-        #   NUXT_SESSION_PASSWORD: ${{ secrets.NUXT_SESSION_PASSWORD }}
+        run: pnpm Build
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+      - name: Deploy to Cloudflare Pages (Recommended: Wrangler)
+        uses: cloudflare/wrangler-action@v3 
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: nuxt-shade-kit
-          directory: dist
-          # 注意：nodejs_compat 兼容性标志需要在 Cloudflare Dashboard 中手动配置
-          # 项目设置 → Functions → 兼容性标志 → 添加 nodejs_compat
+          command: pages deploy dist --project-name=nuxt-shade-kit
